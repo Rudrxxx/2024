@@ -1,81 +1,144 @@
-/* General Styles */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #faf8ef;
+    background-color: #f0f2f5;
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: linear-gradient(90deg, #4267b2, #0047ab);
+    color: white;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    text-align: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    z-index: 1000;
 }
 
-h1 {
-    margin: 20px 0;
-    color: #776e65;
-}
-
-.game-container {
-    max-width: 400px;
-    margin: auto;
-}
-
-.score-container {
-    background: #bbada0;
-    color: #fff;
-    padding: 10px;
-    margin-bottom: 20px;
-    font-size: 18px;
-    border-radius: 8px;
-}
-
-.grid-container {
-    display: grid;
-    grid-template-columns: repeat(4, 90px);
-    grid-template-rows: repeat(4, 100px);
-    gap: 10px;
-    background-color: #bbada0;
-    padding: 10px;
-    border-radius: 8px;
-}
-
-.grid-item {
-    width: 90px;
-    height: 100px;
-    background-color: #cdc1b4;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.navbar .logo {
     font-size: 24px;
     font-weight: bold;
-    border-radius: 5px;
 }
 
-.tile-2 { background-color: #eee4da; color: #776e65; }
-.tile-4 { background-color: #ede0c8; color: #776e65; }
-.tile-8 { background-color: #f2b179; color: white; }
-.tile-16 { background-color: #f59563; color: white; }
-.tile-32 { background-color: #f67c5f; color: white; }
-.tile-64 { background-color: #f65e3b; color: white; }
-.tile-128 { background-color: #edcf72; color: white; }
-.tile-256 { background-color: #edcc61; color: white; }
-.tile-512 { background-color: #edc850; color: white; }
-.tile-1024 { background-color: #edc53f; color: white; }
-.tile-2048 { background-color: #edc22e; color: white; }
+.navbar .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+}
 
-/* Restart Button */
-button {
-    background-color: #8f7a66;
-    color: #fff;
+.navbar .nav-links li {
+    display: inline;
+}
+
+.navbar .nav-links a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+.navbar .nav-links a:hover {
+    color: #ffdd57;
+}
+
+/* Feed Container */
+.feed-container {
+    margin-top: 70px; /* Leave space for navbar */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Posts */
+.post {
+    background-color: #fff;
+    width: 90%;
+    max-width: 600px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    transition: transform 0.3s ease;
+}
+
+.post:hover {
+    transform: translateY(-5px);
+}
+
+.post-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.post-header .avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 2px solid #4267b2;
+}
+
+.post img {
+    width: 100%;
+    border-radius: 8px;
+    margin: 10px 0;
+}
+
+.post-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.like-button {
+    background-color: #ff4d4d;
+    color: white;
     border: none;
+    border-radius: 5px;
     padding: 10px 20px;
     font-size: 16px;
-    border-radius: 8px;
     cursor: pointer;
-    margin-top: 20px;
+    transition: background-color 0.3s ease;
 }
 
-button:hover {
-    background-color: #776e65;
+.like-button:hover {
+    background-color: #e63939;
+}
+
+.like-counter {
+    font-size: 14px;
+    color: #555;
+}
+
+/* Comments Section */
+.comments-section {
+    margin-top: 10px;
+    text-align: left;
+}
+
+.comment-input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.comments-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 10px;
+}
+
+.comments-list li {
+    background: #f1f1f1;
+    padding: 8px 10px;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    font-size: 14px;
 }
